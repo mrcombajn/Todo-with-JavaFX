@@ -9,7 +9,7 @@ class TodoTest {
     Todo todo;
     @BeforeEach
     void createTodoBeforeEach() {
-        todo = new Todo();
+        todo = new Todo("ExampleTitle", "ExampleDescription", "ExampleId");
     }
 
     @Test

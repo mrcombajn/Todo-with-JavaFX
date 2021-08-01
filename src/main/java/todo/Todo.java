@@ -5,6 +5,12 @@ public class Todo {
     private String description;
     private String id;
 
+    public Todo(String title, String description, String id) {
+        this.title = title;
+        this.description = description;
+        this.id = id;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -31,7 +37,7 @@ public class Todo {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(String id) throws IllegalArgumentException {
         if(id == null || id.equals("")) {
             throw new IllegalArgumentException();
         }
