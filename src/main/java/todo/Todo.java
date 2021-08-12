@@ -1,5 +1,7 @@
 package todo;
 
+import java.util.Objects;
+
 public class Todo {
     private String title;
     private String description;
@@ -42,5 +44,18 @@ public class Todo {
             throw new IllegalArgumentException();
         }
         this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Todo todo = (Todo) o;
+        return title.equals(todo.title) && description.equals(todo.description) && id.equals(todo.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, description, id);
     }
 }

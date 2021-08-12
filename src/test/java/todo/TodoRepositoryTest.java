@@ -35,4 +35,27 @@ class TodoRepositoryTest {
         //then
         assertThrows(IllegalArgumentException.class, () -> todoRepository.add(null));
     }
+
+    @Test
+    void deletingANonExistentTodoShouldThrowAnException() {
+        //given
+        TodoRepository todoRepository = new TodoRepository();
+        //when
+        //then
+        assertThrows(IllegalArgumentException.class, () -> todoRepository.delete("1"));
+    }
+
+    @Test
+    void deletingAnExistentTodoShouldDeleteTodoFromList() {
+        //given
+        TodoRepository todoRepository = new TodoRepository();
+        todoRepository.add(new Todo("Title1", "Description1", "123"));
+        todoRepository.add(new Todo("Title5", "Description2", "15"));
+        todoRepository.add(new Todo("Title3", "Description3", "156"));
+        //when
+        todoRepository.delete("15");
+        //then
+        assertEquals(2, todoRepository.getTodos().size());
+
+    }
 }
