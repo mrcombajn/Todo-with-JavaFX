@@ -9,7 +9,7 @@ class TodoTest {
     Todo todo;
     @BeforeEach
     void createTodoBeforeEach() {
-        todo = new Todo("ExampleTitle", "ExampleDescription", "ExampleId");
+        todo = new Todo("ExampleTitle", "ExampleDescription");
     }
 
     @Test
@@ -43,17 +43,6 @@ class TodoTest {
 
     @Test
     void settingANullDescriptionShouldThrowAnException() {
-        //given
-        //when
-        //then
-        assertAll(
-                () -> assertThrows(IllegalArgumentException.class, () -> todo.setDescription(null)),
-                () -> assertThrows(IllegalArgumentException.class, () -> todo.setDescription(""))
-        );
-    }
-
-    @Test
-    void settingANullIdShouldThrowAnException() {
         //given
         //when
         //then

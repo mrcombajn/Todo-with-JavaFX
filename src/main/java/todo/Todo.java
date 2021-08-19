@@ -7,10 +7,14 @@ public class Todo {
     private String description;
     private String id;
 
-    public Todo(String title, String description, String id) {
+    public Todo(String title, String description) {
         this.title = title;
         this.description = description;
-        this.id = id;
+    }
+
+    public Todo(String title) {
+        this.title = title;
+        this.description = "";
     }
 
     public String getTitle() {
@@ -39,12 +43,6 @@ public class Todo {
         return id;
     }
 
-    public void setId(String id) throws IllegalArgumentException {
-        if(id == null || id.equals("")) {
-            throw new IllegalArgumentException();
-        }
-        this.id = id;
-    }
 
     @Override
     public boolean equals(Object o) {

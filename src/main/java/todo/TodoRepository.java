@@ -7,6 +7,12 @@ import java.util.stream.Collectors;
 public class TodoRepository {
     private List<Todo> todos = new ArrayList<>();
 
+    public TodoRepository(List<Todo> todos) {
+        this.todos.addAll(todos);
+    }
+
+    public TodoRepository() {}
+
     public List<Todo> getTodos() {
         return todos;
     }
